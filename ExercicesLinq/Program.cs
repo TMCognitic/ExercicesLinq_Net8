@@ -1,10 +1,16 @@
-﻿namespace ExercicesLinq
+﻿using Domain;
+
+namespace ExercicesLinq;
+
+internal class Program
 {
-    internal class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
+        DataContext dc = new DataContext();
+
+        foreach (Student student in dc.Students)
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine(student.Last_Name);
         }
     }
 }
